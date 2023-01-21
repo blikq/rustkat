@@ -38,4 +38,8 @@ Alternatively, you can also use the following command to run the program and pas
   
 `./target/release/<executable> <file path>`
 
-Note: you might need to add execute permission to the file by running `chmod +x <executable>`
+Note: you might need to add execute permission to the file by running `chmod +x <executable>`,
+rustkat app in the main directory is compiled for ubuntu
+and remember its case sensitive
+
+
