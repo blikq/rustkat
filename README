@@ -1,3 +1,4 @@
+README
 ## Introduction
 
 This code is a simple program written in Rust that reads the contents of a file and prints them to the terminal. Here is a documentation and installation guide for running the code on Ubuntu:
@@ -41,5 +42,3 @@ Alternatively, you can also use the following command to run the program and pas
 Note: you might need to add execute permission to the file by running `chmod +x <executable>`,
 rustkat app in the main directory is compiled for ubuntu
 and remember its case sensitive
-
-
