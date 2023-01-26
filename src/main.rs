@@ -8,7 +8,7 @@ Usage:
     rkat [OPTOINS]
 
 OPTIONS:
-    -- -V, -- --version       Print version info
+    -V, --version       Print version info
     <file directory>    Print content of file
 
 more options coming soon...
@@ -18,21 +18,14 @@ const _VERSION: &str = "rkat this version `0.1.0`";
 
 
 fn main() {
-
-    let args: Vec<String> = env::args().collect();
-    let mut ppath = String::new();
-    match args.len(){
-        1 => {
-            println!("Enter the path to the file you want to read:");
-            io::stdin().read_line(&mut ppath)
-                .expect("did not receive input");
-            read(&ppath);
-        },
-        2 => match args[1].as_str() {
-            _ => read(&args[1])
-        },
-        _ => println!("Features not yet implemented")
-    }
+    let args: Vec<String> = env::args().skip(1).collect();
+    match &args[..] {
+        [single_arg] => match &single_arg[..] {
+            "-V" | "--version" => println!("{_VERSION}"),
+            _ => read(single_arg),
+        }
+        _ => println!("{_HELP}"),
+    };
 }
 
 fn read(path: &String) {
